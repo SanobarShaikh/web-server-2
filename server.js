@@ -5,9 +5,9 @@ const fs=require("fs");
 let app=new express();
 //let port=process.evt.PORT ? process.evt.PORT : 3000;
 
-const port=process.env.PORT || 80;
+const port=process.env.PORT || 3000;
 
-console.log(process.evt);
+console.log(process.env);
 app.use((req,res,next)=>{
   var log = new Date().toString() + ` : ${req.method} ${req.url}\n`;
   fs.appendFile("server.log",log,(err)=>{});
