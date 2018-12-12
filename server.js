@@ -38,8 +38,14 @@ app.get("/" , (req,res)=>{
 
 app.get("/about",(req,res)=>{
   res.render("about.hbs",{
-    message: "This Is Rendered"
+    message: "About Us"
   })
+});
+
+app.get("/projects",(req,res)=>{
+  res.render("projects.hbs",{
+    message: "Projects Page"
+  });
 });
 
 app.get("/bad",(req,res)=>{
