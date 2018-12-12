@@ -5,7 +5,7 @@ const fs=require("fs");
 let app=new express();
 //let port=process.evt.PORT ? process.evt.PORT : 3000;
 
-const port=80;//process.env.PORT || 3000;
+const port=process.env.PORT || 80;
 
 //console.log(process.env);
 app.use((req,res,next)=>{
