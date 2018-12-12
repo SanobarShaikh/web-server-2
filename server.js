@@ -1,3 +1,4 @@
+console.log(process.env.PORT);
 const express=require("express");
 const hbs=require("hbs");
 const fs=require("fs");
@@ -7,7 +8,7 @@ let app=new express();
 
 const port=process.env.PORT || 80;
 
-//console.log(process.env);
+console.log(process.env.PORT);
 app.use((req,res,next)=>{
   var log = new Date().toString() + ` : ${req.method} ${req.url}\n`;
   fs.appendFile("server.log",log,(err)=>{});
