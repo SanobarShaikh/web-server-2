@@ -3,7 +3,11 @@ const hbs=require("hbs");
 const fs=require("fs");
 
 let app=new express();
+//let port=process.evt.PORT ? process.evt.PORT : 3000;
 
+const port=process.env.PORT || 80;
+
+console.log(process.evt);
 app.use((req,res,next)=>{
   var log = new Date().toString() + ` : ${req.method} ${req.url}\n`;
   fs.appendFile("server.log",log,(err)=>{});
@@ -43,6 +47,6 @@ app.get("/bad",(req,res)=>{
   });
 });
 
-app.listen(80,()=>{
-  console.log("Server Started!");
+app.listen(port,()=>{
+  console.log(`port is ${port}`);
 });
